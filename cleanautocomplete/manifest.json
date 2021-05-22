@@ -1,0 +1,27 @@
+{
+    "manifest_version" : 2,
+    "name": "清除输入框默认提示",
+    "version": "1.0.0",
+    "description": "禁止一些搜索框显示历史记录   使用方法：连续点击输入框5次弹出配置选项",
+    "content_scripts":
+    [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["js/main.js"],
+            "run_at": "document_end"
+        }
+    ],
+    "permissions": 
+    [
+        "storage"
+    ],
+    "options_ui":
+    {
+        "page": "options.html",
+        "chrome_style": true
+    },
+    "browser_action":
+    {
+        "default_popup": "popup.html"
+    }
+}
